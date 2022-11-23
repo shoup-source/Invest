@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+ <meta charset="utf-8">
+ <title>Loan Calculator</title>
+ <script>
+     function doPayment() {
+         let p = parseFloatdocument.getElementById("paymentPerPeriod").value;
+         let a = parseFloatdocument.getElementById("loanAmount").value;
+         let r = parseFloatdocument.getElementById("interestRatePerPeriod").value;
+         let n = parseFloatdocument.getElementById("totalNumberOfPeriods").value;
+          }
+     function doBalance() {
+         let p = parseFloatdocument.getElementById("paymentPerPeriod").value;
+         let a = parseFloatdocument.getElementById("loanAmount").value;
+         let r = parseFloatdocument.getElementById("interestRatePerPeriod").value;
+         let n = parseFloatdocument.getElementById("totalNumberOfPeriods").value;  
+          }
+     function computePayment(principal, annualRate, years, periodsPerYear) {
+         let p = parseFloatdocument.getElementById("paymentPerPeriod").value;
+         let a = parseFloatdocument.getElementById("loanAmount").value;
+         let r = parseFloatdocument.getElementById("interestRatePerPeriod").value;
+         let n = parseFloatdocument.getElementById("totalNumberOfPeriods").value;
+     var payment = a * (r / 1) - Math.pow((1 + r),(n));
+     documment.getElementById("outputDivA").innerHTML = payment;
+          }
+     function computeBalance(principal, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate) {
+         let b = parseFloatdocument.getElementById("balance").value;
+         let a = parseFloatdocument.getElementById("loanAmount").value;
+         let r = parseFloatdocument.getElementById("interestRatePerPeriod").value;
+         let p = parseFloatdocument.getElementById("paymentPerPeriod").value;
+         let d = parseFloatdocument.getElementById("numberOfPaymentPaidToDate").value;
+         var x = a * (Math.pow(1 + r),(d)) − p * (Math.pow(1 + r), (d)) − 1) /r;
+     documment.getElementById("outputDivB").innerHTML = x;
+       }
+ </script>
+ </head>
+ <body> 
+     <h1>My Template Program</h1>  
+     Amount Borrowed (principal)<input type = "text" id = "principal"><br><br>
+     Annual Interest Rate (example .065)<input type = "text" id = "InterestRatePerPeriod"><br><br>
+     Number of Years <input type = "text" id = "years"><br><br> 
+     Payments Per Year <input type = "text" id = "totalNumberOfPeriods"><br>
+     <button type="button" onclick="computePayment()">Compute Payment</button>
+     <div id="outputDivA"></div><br>
+     Number of payments paid to date <input type = "text" id = "computeBalance()"><br> 
+     <button type="button" onclick="computeBalance()">Compute Payoff Amount</button>
+     <div id="outputDivB"></div><br>
+ </body>      
+
+</html>
